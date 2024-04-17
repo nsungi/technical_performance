@@ -1,0 +1,106 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Technician chat{% endblock %}
+
+{% block styles %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .chat-box {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .chat-box p {
+        margin: 5px 0;
+    }
+
+    .input-box {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .input-box input[type="text"] {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .input-box input[type="submit"] {
+        padding: 8px 20px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    .input-box input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Content of the home page goes here -->
+<div class="container">
+    <h2>Technician Chat</h2>
+    <div class="chat-box" id="chatBox">
+        <p>Welcome to the chat!</p>
+    </div>
+    <form id="chatForm">
+        <div class="input-box">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <input type="submit" value="Send">
+        </div>
+    </form>
+</div>
+
+<script>
+    const chatForm = document.getElementById('chatForm');
+    const messageInput = document.getElementById('messageInput');
+    const chatBox = document.getElementById('chatBox');
+
+    chatForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const message = messageInput.value.trim();
+        if (message !== '') {
+            appendMessage('You: ' + message);
+            // Here you can send the message to the selected technician
+            messageInput.value = ''; // Clear input field after sending message
+        }
+    });
+
+    function appendMessage(message) {
+        const p = document.createElement('p');
+        p.textContent = message;
+        chatBox.appendChild(p);
+        chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom
+    }
+</script>
+{% endblock %}
+

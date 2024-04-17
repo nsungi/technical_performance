@@ -1,0 +1,105 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Feedbacks{% endblock %}
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color:#007bff;
+}
+.button{
+    display: flex;
+}
+button {
+    padding: 8px 12px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+
+button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+
+{% block content %}
+<!-- Content of the home page goes here -->
+<div class="container">
+    <h1>Feedbacks</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Feedback</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>Technician</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis metus nec ante feugiat blandit.</td>
+                <td>
+                    <div class="button">
+                    <div class="update">
+                        <button onclick="updateFeedback()" style="background-color: #05f0a5;">Update</button>
+                    </div> 
+                    <div class="delete">
+                        <button onclick="deleteFeedback()" style="background-color: #e12104;">Delete</button>
+                    </div> 
+                </div>
+                </td>
+            </tr>
+            <!-- Add more rows for additional feedbacks -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function updateFeedback() {
+        // Add your update feedback functionality here
+        alert("Update functionality will be implemented.");
+    }
+
+    function deleteFeedback() {
+        // Add your delete feedback functionality here
+        alert("Delete functionality will be implemented.");
+    }
+</script>
+{% endblock %}

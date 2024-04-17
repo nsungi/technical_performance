@@ -1,0 +1,145 @@
+
+
+{% extends 'base.html' %}
+{% block title %}User management{% endblock %}
+
+{% block styles %}
+<style>
+    .container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.client-list-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color:  #007bff;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.button{
+    display: flex;
+    }
+
+    button {
+    padding: 8px 12px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+
+button:hover {
+    background-color: #0056b3;
+}
+table td button.remove {
+    background-color: #e74c3c; /* Red background color for remove button */
+    color: white; /* White text color for remove button */
+}
+
+table td button.update {
+    background-color: #2ecc71; /* Green background color for update button */
+    color: white; /* White text color for update button */
+}
+
+    </style>
+{% endblock %}
+
+{% block content %}
+<!-- Content of the home page goes here -->
+<div class="container">
+    <h1>LIST OF USERS</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Role</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+                <td>1234567890</td>
+                <td>Technician</td>
+                <td>New York</td>
+                <td>
+                <div class="button">
+                    <div class="remove">
+                        <button class="remove">Remove</button>
+                        </div>
+                    <div class="update">
+                        <button class="update">Update</button>
+                        </div>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Jane</td>
+                <td>Smith</td>
+                <td>jane@example.com</td>
+                <td>9876543210</td>
+                <td>Client</td>
+                <td>Los Angeles</td>
+                <td>
+                    <div class="button">
+                        <div class="remove">
+                            <button class="remove">Remove</button>
+                            </div>
+                        <div class="update">
+                            <button class="update">Update</button>
+                            </div>
+                    </div>
+                    </td>
+            </tr>
+            <!-- Additional rows for more users -->
+        </tbody>
+    </table>
+</div>
+{% endblock %}

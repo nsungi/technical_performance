@@ -1,0 +1,124 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}View Booked clients{% endblock %}
+
+{% block styles %}
+<style>
+    /* Same CSS styles as provided earlier */
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f2f2f2;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.client-list-container {
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+}
+
+th, td {
+padding: 10px;
+border-bottom: 1px solid #ddd;
+text-align: left;
+}
+
+th {
+background-color:  #007bff;
+}
+
+tr:hover {
+background-color: #f5f5f5;
+}
+
+.button{
+display: flex;
+}
+
+button {
+padding: 8px 12px;
+border: none;
+color: #fff;
+cursor: pointer;
+border-radius: 4px;
+margin-right: 5px;
+}
+
+
+button:hover {
+background-color: #0056b3;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Content of the home page goes here -->
+<div class="client-list-container">
+    <h2>Booked Clients</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Booked Services</th>
+                <th>Contact</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>john@example.com</td>
+                <td>Electrical Repair</td>
+                <td>+43-200000000</td>
+                <td>Mbezi</td>
+                <td>
+                    <div class="button">
+                    <div class="update">
+                        <a href="./tcontract.html"><button onclick="updateFeedback()" style="background-color: #05f0a5;">Accept</button></a>
+                    </div> 
+                    <div class="delete">
+                        <a href="./reject.html"><button onclick="deleteFeedback()" style="background-color: #e12104;">Reject</button></a>
+                    </div> 
+                </div>
+                </td>
+            </tr>
+            <!-- Add more rows for additional booked clients -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function updateFeedback() {
+        // Add your update feedback functionality here
+        alert("Accept functionality will be implemented.");
+    }
+
+    function deleteFeedback() {
+        // Add your delete feedback functionality here
+        alert("Deny functionality will be implemented.");
+    }
+</script>
+{% endblock %}

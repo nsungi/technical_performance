@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Create Feedback{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    <center>
+        <h2 style="margin-bottom: 20px;">Create Feedback</h2>
+    
+    </center>
+    
+    <form action="" method="post" style="max-width: 400px; margin: 0 auto;">
+        {% csrf_token %}
+        <input type="hidden" name="appointment_id" value="{{ appointment_id }}">
+        
+        <div class="mb-3" style="margin-bottom: 15px;">
+            <label for="message" class="form-label">Message:</label>
+            <select class="form-select" id="message" name="message" required style="width: 100%; padding: 10px; border-radius: 5px;">
+                <option value="accepted">Accepted</option>
+                <option value="rejected">Rejected</option>
+            </select>
+        </div>
+
+        <div class="mb-3" style="margin-bottom: 15px;">
+            <label for="description" class="form-label">Description:</label>
+            <textarea class="form-control" id="description" name="description" rows="3" required style="width: 100%; padding: 10px; border-radius: 5px;"></textarea>
+        </div>
+       
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px; border-radius: 5px;">Submit</button>
+    </form>
+</div>
+{% endblock %}

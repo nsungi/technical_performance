@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Create Appointment{% endblock %}
+
+{% block content %}
+<div class="container mt-3" style="max-width: 600px; margin-top: 20px;">
+    <h2 style="margin-bottom: 20px;">Create Appointment</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3" style="margin-bottom: 15px;">
+            <label for="title" class="form-label" style="margin-bottom: 5px;">Title:</label>
+            <input type="text" class="form-control" id="title" name="title" required style="width: 100%;">
+        </div>
+        <div class="mb-3" style="margin-bottom: 15px;">
+            <label for="description" class="form-label" style="margin-bottom: 5px;">Description:</label>
+            <textarea class="form-control" id="description" name="description" rows="3" required style="width: 100%;"></textarea>
+        </div>
+        <div class="row g-2" style="margin-bottom: 15px;">
+            <div class="col-md-6">
+                <label for="date" class="form-label" style="margin-bottom: 5px;">Date:</label>
+                <input type="date" class="form-control" id="date" name="date" required style="width: 100%;">
+            </div>
+            <div class="col-md-6">
+                <label for="phone_number" class="form-label" style="margin-bottom: 5px;">Phone Number:</label>
+                <input type="text" class="form-control" id="phone_number" name="phone_number" required style="width: 100%;">
+            </div>
+        </div>
+        <div class="mb-3" style="margin-bottom: 15px;">
+            <label for="technician_id" class="form-label" style="margin-bottom: 5px;">Technician:</label>
+            <select class="form-select" id="technician_id" name="technician_id" required style="width: 100%;">
+                <option value="" disabled selected>Select Technician</option>
+                {% for technician in technicians %}
+                <option value="{{ technician.id }}">{{ technician.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3" style="margin-bottom: 15px;">
+            <label for="services" class="form-label" style="margin-bottom: 5px;">Services:</label>
+            <select class="form-select" id="services" name="services" multiple required style="width: 100%;">
+                {% for service in services %}
+                <option value="{{ service.id }}">{{ service.title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+    </form>
+</div>
+{% endblock %}

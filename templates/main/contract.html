@@ -1,0 +1,83 @@
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Booking Confirmation{% endblock %}
+
+{% block styles %}
+<style>
+   
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    .congratulations-message {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .contract-button {
+        text-align: center;
+    }
+
+    .contract-button button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .contract-button button:hover {
+        background-color: #0056b3;
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Content of the home page goes here -->
+<center>
+
+    <div class="container">
+        <h2>Booking Confirmation</h2>
+    
+        <div class="congratulations-message">
+            <p>Congratulations! Your booking has been accepted by the technician.</p>
+        </div>
+    
+        <div class="contract-button">
+            <button onclick="printContract()">Print Contract Form</button>
+        </div>
+    </div>
+
+
+</center>
+
+
+<script>
+    function printContract() {
+        // Dummy function for printing contract form
+        window.print();
+    }
+</script>
+{% endblock %}

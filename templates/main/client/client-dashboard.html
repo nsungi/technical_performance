@@ -1,0 +1,43 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}Technician Dashboard{% endblock %}
+
+<link rel="stylesheet" href="../project style/technician.css">
+
+
+
+{% block content %}
+<!-- Content of the home page goes here -->
+<div class="header">
+    <header>
+        <h1>Client Dashboard</h1>
+    </header>
+</div>
+<div class="sidebar">
+    <nav>
+        <ul>
+            <li><a href="../viewtechnician.html">view technician</a></li> 
+            <br>
+            <li><a href="./booking.html">Book Technician</a></li>
+            <br>
+            <li><a href="../postfeedbacks.html">Post Feedbacks</a></li>
+            <br>
+            <li><a href="../viewfeedback2.html">View Feedbacks</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="main">
+    <main>
+        <!-- Content will be displayed here -->
+    </main>
+</div>
+<div class="footer">
+    <footer>
+        <p>&copy; 2024 Technician Dashboard</p>
+    </footer>
+</div>
+
+{% endblock %}

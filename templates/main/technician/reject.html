@@ -1,0 +1,48 @@
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Booking Confirmation{% endblock %}
+
+{% block styles %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    .rejection-message {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Content of the home page goes here -->
+<div class="container">
+    <h2>Booking Rejection</h2>
+
+    <div class="rejection-message">
+        <p>You Rejected This Client Booking.</p>
+    </div>
+</div>
+{% endblock %}

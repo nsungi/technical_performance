@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> <!-- Animate.css -->
+  <style>
+    /* Custom CSS for additional styling */
+    .navbar {
+      background-color: #4189db; /* Updated background color */
+      color: white; /* Text color */
+    }
+    .navbar-nav .nav-link {
+      color: white !important; /* Set text color to white */
+    }
+    .navbar-nav .nav-link:hover {
+      color: rgba(255, 255, 255, 0.8) !important; /* Lighter text color on hover */
+    }
+    .image-words-section {
+      text-align: center;
+      padding: 20px;
+    }
+    .image-words-section img {
+      max-width: 100%;
+      height: auto;
+    }
+    .service {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    .about-section,
+    .contact-section {
+      text-align: center;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 5px;
+    }
+    .footer {
+      background-color: gray;
+      padding: 20px;
+      text-align: center;
+    }
+    .socialIcons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .socialIcons a {
+      text-decoration: none;
+      background-color: white;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 50%;
+    }
+    .socialIcons a i {
+      font-size: 2em;
+      color: black;
+      opacity: 0.9;
+    }
+    /* Hover effect on social icons */
+    .socialIcons a:hover {
+      background-color: black;
+      transition: 0.5s;
+    }
+    .socialIcons a:hover i {
+      color: white;
+      transition: 0.5s;
+    }
+    .footerNav ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+    }
+    .footerNav ul li a {
+      color: black;
+      margin: 20px;
+      text-decoration: none;
+      font-size: 1.3em;
+      opacity: 0.7;
+      transition: 0.5s;
+    }
+    /* Change color of footer nav links on hover */
+    .footerNav ul li a:hover {
+      opacity: 1;
+    }
+    .footerBottom p {
+      color: white;
+    }
+    .designer {
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 400;
+      margin: 0px 5px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">  
+  <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href=''>Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'portifolio' %}">Portifolio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'services' %}">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'signUp' %}">Signup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'signIn' %}">Signin</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid" style="margin-top: 70px;"> <!-- Added margin-top here -->
+  {% block content %}
+  <!-- Content of individual pages will be inserted here -->
+  
+  
+  {% endblock %}
+</div>
+
+
+<footer class="footer">
+    <div class="container">
+      <div class="socialIcons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="footerNav">
+        <ul>
+          <li><a href=''>Home</a></li>
+          <li><a href="{% url 'about' %}">About us</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'contact' %}">Contact us</a></li>
+          <li><a href="#">Our team</a></li>
+        </ul>
+      </div>
+      <div class="footerBottom">
+        <strong>Copyright &copy; <span id="currentYear"></span></strong>
+    All rights reserved. <br>
+    <p><b>developed by</b> Developer</p>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+    // JavaScript code to update the current year dynamically
+    document.getElementById('currentYear').innerText = new Date().getFullYear();
+</script>
+
+  
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Animate.css -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
+  </body>
+  </html>

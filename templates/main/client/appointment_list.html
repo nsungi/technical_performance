@@ -1,0 +1,41 @@
+
+
+{% extends 'base.html' %}
+{% block title %}Appointment List{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    <h2>Appointment List</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Technician Name</th>
+                <th scope="col">Client Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ appointment.title }}</td>
+                <td>{{ appointment.date }}</td>
+                <td>{{ appointment.description }}</td>
+                <td>{{ appointment.phone_number }}</td>
+                <td>{{ appointment.technical_staff }}</td>
+                <td>{{ appointment.user }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6">No appointments available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

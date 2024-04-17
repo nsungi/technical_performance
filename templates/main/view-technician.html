@@ -1,0 +1,117 @@
+
+{% extends 'base.html' %}
+
+{% block title %} book technician{% endblock %}
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.technician-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.technician-card {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.technician-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/*search bar*/
+.search-bar {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    width: 60%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+
+{% block content %}
+<!-- Content of the home page goes here -->
+<div class="container">
+    <h1>Book Technicians</h1>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search by category...">
+        <button onclick="searchTechnician()">Search</button>
+    </div>
+
+    <div class="technician-cards">
+        <div class="technician-card">
+            <img src="technician1.jpg" alt="Technician 1">
+            <h2>John Doe</h2>
+            <p>Location: City, Country</p>
+            <p>Service: Service A</p>
+            <a href="./client/booking.html"><button>Make booking</button></a>
+        </div>
+        <div class="technician-card">
+            <img src="technician2.jpg" alt="Technician 2">
+            <h2>Jane Smith</h2>
+            <p>Location: City, Country</p>
+            <p>Service: Service B</p>
+            <a href="./client/booking.html"><button>Make booking</button></a>
+        </div>
+        <!-- Add more technician cards here -->
+    </div>
+</div>
+{% endblock %}

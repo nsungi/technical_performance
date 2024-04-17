@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Create Contract{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="mt-5">Create Contract</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="service">Service:</label>
+      <select class="form-control" id="service" name="service" required>
+        {% for service in services %}
+        <option value="{{ service.id }}">{{ service.title }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="phone_number">Phone Number:</label>
+      <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+    </div>
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <select class="form-control" id="title" name="title" required>
+        {% for choice in contract_choices %}
+        <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+        {% endfor %}
+      </select>
+    </div>    
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Contract</button>
+  </form>
+</div>
+{% endblock %}

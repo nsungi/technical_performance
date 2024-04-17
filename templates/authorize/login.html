@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="">
+    <style>
+        /* styles.css */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .login-container {
+            width: 300px;
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .input-group input[type="text"],
+        .input-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .input-group input[type="text"]:focus,
+        .input-group input[type="password"]:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        /* Message styles */
+        .message {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        /* Success message */
+        .message.success {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        /* Error message */
+        .message.error {
+            background-color: #f44336;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="input-group">
+                <label for="name">Username:</label>
+                <input type="text" id="email" name="Uname" placeholder="Enter your Username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="pass1" placeholder="Enter your password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        
+        <p>Didn't have an account? <a href="{% url 'signUp' %}">Register here</a></p>
+
+        {% if messages %}
+            <div id="messages">
+                {% for message in messages %}
+                    <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

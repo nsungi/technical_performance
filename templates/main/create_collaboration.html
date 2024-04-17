@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Create Collaboration{% endblock %}
+
+{% block content %}
+<!-- Content of the home page goes here -->
+<div class='chat-area' style="margin-bottom: 20px; padding: 20px; background-color: #f7f7f7; border: 1px solid #ddd; border-radius: 10px; max-height: 300px; overflow-y: auto;">
+    {% for item in all_comment %}
+        <div class="messages" style="margin-bottom: 10px; padding: 10px; background-color: #fff; border-radius: 8px;">
+            <p>{{ item.uid.username }}</p>
+            <h5>{{ item.description }}</h5>
+            <span>{{ item.time }}</span>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="container-fluid sticky-bottom" style="margin-top: 20px;">
+    <!-- Content of individual to write comments -->
+    <form action="" method="post" class="chat-form">
+        {% csrf_token %}
+        <div class="form-floating">
+            <textarea class="form-control chat-textarea" name="comment" placeholder="Leave a comment here" required style="height: 100px; resize: none;"></textarea>
+        </div>
+        <div class="modal-footer" style="margin-top: 10px; justify-content: flex-end;">
+            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Feedback system{% endblock %}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(129, 154, 255, 0.881);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #6492c4;
+    }
+</style>
+
+{% block content %}
+<!-- Content of the home page goes here -->
+<div class="container">
+    <h1>Feedback Form</h1>
+    <form action="" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+        <input type="submit" onclick="postfeedback()" value="Submit Feedback">
+    </form>
+</div>
+     
+ <script>
+    function postfeedback(){
+        alert("feedbacks posted succesfully");
+    }
+ </script>
+{% endblock %}
+
+
+
+

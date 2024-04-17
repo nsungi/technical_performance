@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}View Contract{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="mt-5">View Contract</h2>
+  <div class="card mt-4">
+    <div class="card-body">
+      <h5 class="card-title">Contract Details</h5>
+      <p class="card-text"><strong>Title:</strong> {{ contract.title }}</p>
+      <p class="card-text"><strong>Description:</strong> {{ contract.description }}</p>
+      <p class="card-text"><strong>Service:</strong> {{ contract.service.title }}</p>
+      <p class="card-text"><strong>User:</strong> {{ contract.user.username }}</p>
+      <p class="card-text"><strong>Technician:</strong> {{ contract.technician_name }}</p> <!-- Add this line -->
+      <p class="card-text"><strong>Phone Number:</strong> {{ contract.phone_number }}</p>
+      <p class="card-text"><strong>Date:</strong> {{ contract.date }}</p>
+      <div class="text-right">
+        <a href="{% url 'download_contract' contract.id %}" class="btn btn-primary">Download Contract</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

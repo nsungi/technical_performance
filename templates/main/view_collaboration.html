@@ -1,0 +1,30 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}View Collaboration{% endblock %}
+
+ 
+{% block content %}
+<!-- Content of the home page goes here -->
+<h1>{{ collaboration.title }}</h1>
+<p>{{ collaboration.description }}</p>
+<h2>Participants:</h2>
+<ul>
+    {% for participant in collaboration.participants.all %}
+        <li>{{ participant.username }}</li>
+    {% endfor %}
+</ul>
+<h2>Messages:</h2>
+<ul>
+    {% for message in messages %}
+        <li>{{ message.sender.username }}: {{ message.content }}</li>
+    {% endfor %}
+</ul>
+<form action="{% url 'send_message' collaboration.id %}" method="POST">
+    {% csrf_token %}
+    <label for="message">Send Message:</label><br>
+    <textarea id="message" name="message"></textarea><br>
+    <input type="submit" value="Send">
+</form>
+{% endblock %}

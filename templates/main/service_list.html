@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}
+  Services List
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <center>
+          <h2 class="mt-5">Available Services</h2>
+        </center>
+       
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for service in services %}
+              <tr>
+                <td>{{ service.title }}</td>
+                <td>{{ service.description }}</td>
+                <td>${{ service.price }}</td>
+                <td>
+                  <a href="{% url 'update_service' service.id %}" class="btn btn-primary btn-sm">Edit</a>
+                  <a href="{% url 'delete_service' service.id %}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+            {% endfor %}
+            <tr>
+              <td colspan="3"></td>
+              <td>
+                <button class="btn btn-primary" id="addServiceBtn">
+                  <i class="fas fa-plus"></i> 
+                  <a href="{% url 'create_service' %}" class="text-dark" >Add New Service</a>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for adding service -->
+  <div class="modal fade" id="addServiceModal" tabindex="-1" role="dialog" aria-labelledby="addServiceModalLabel" aria-hidden="true">
+    <!-- Your modal content for adding service -->
+  </div>
+{% endblock content %}
+
+{% block script %}
+<script>
+  // JavaScript function to handle click event of the "Add Service" button
+  document.getElementById('addServiceBtn').addEventListener('click', function() {
+    // Show the modal for adding service
+    $('#addServiceModal').modal('show');
+  });
+</script>
+{% endblock script %}

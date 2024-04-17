@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block styles %}
+<style>
+    /* Paste the additional CSS styles for the home page here */
+    
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Content of the home page goes here -->
+<center>
+    <div class="image-words-section p-3 m-4">
+        <img src="{% static 'assets/image/welding.jpg' %}" alt="Image" style="width: 800px; height:400px;"> <!-- Replace image.jpg with the path to your image -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet, velit at interdum dignissim, libero velit varius nisi, a condimentum libero odio non lacus.</p>
+    </div>
+</center>
+
+
+<div class="service-container">
+    <!-- Service divs go here -->
+    <div class="service">
+        <h2>Service 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet, velit at interdum dignissim, libero velit varius nisi, a condimentum libero odio non lacus.</p>
+        <a href="#">View More</a>
+      </div>
+      <div class="service">
+        <h2>Service 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet, velit at interdum dignissim, libero velit varius nisi, a condimentum libero odio non lacus.</p>
+        <a href="#">View More</a>
+      </div>
+      <div class="service">
+        <h2>Service 3</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet, velit at interdum dignissim, libero velit varius nisi, a condimentum libero odio non lacus.</p>
+        <a href="#">View More</a>
+      </div>
+</div>
+
+<div class="about-section">
+    <!-- About section content goes here -->
+    <h2>About Us</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet, velit at interdum dignissim, libero velit varius nisi, a condimentum libero odio non lacus.</p>
+    <p>Contact us at: example@example.com</p>
+</div>
+
+<div class="contact-section">
+    <!-- Contact section content goes here -->
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to contact us.</p>
+        <p>Email: example@example.com</p>
+        <p>Phone: 123-456-7890</p>
+     
+
+</div>
+{% endblock %}

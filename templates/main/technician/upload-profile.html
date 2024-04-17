@@ -1,0 +1,96 @@
+
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Technician Profile Upload{% endblock %}
+
+{% block styles %}
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Content of the home page goes here -->
+
+<div class="container">
+    <h1>Technician Profile Upload</h1>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="services">Services:</label>
+            <input type="text" id="services" name="services" required>
+        </div>
+        <div class="form-group">
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+        </div>
+        <div class="form-group">
+            <label for="cv">Upload CV:</label>
+            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+        </div>
+        <button onclick="uploadprofile()" type="submit">Upload Profile</button>
+    </form>
+</div>
+<script>
+    function uploadprofile(){
+        alert("profile succesfully uploaded");
+    }
+</script>
+{% endblock %}

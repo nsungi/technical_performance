@@ -1,0 +1,58 @@
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Feedback List{% endblock %}
+
+<style>
+    /* Add your CSS styles here */
+    /* Example styles for demonstration */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        color: #333;
+        text-align: center;
+    }
+    .feedback-item {
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .feedback-item h2 {
+        color: #007bff;
+    }
+    .feedback-item p {
+        color: #666;
+    }
+</style>
+{% block content %}
+<!-- Content of the home page goes here -->
+<div class="container">
+    <h1>Feedback List</h1>
+    {% for feedback_item in feedback_items %}
+    <div class="feedback-item">
+        <h2>{{ feedback_item.title }}</h2>
+        <p>{{ feedback_item.details }}</p>
+        <p>Created at: {{ feedback_item.created_at }}</p>
+        <a href="{% url 'view_feedback' feedback_item.pk %}">View Details</a>
+    </div>
+    {% empty %}
+    <p>No feedback available.</p>
+    {% endfor %}
+</div>
+{% endblock %}

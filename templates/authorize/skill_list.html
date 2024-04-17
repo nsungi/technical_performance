@@ -1,0 +1,14 @@
+
+
+{% extends 'base.html' %}
+{% block title %}Skills{% endblock %}
+
+{% block content %}
+<h2>List of Skills</h2>
+<ul>
+  {% for skill in skills %}
+  <li><a href="{% url 'skill_detail' pk=skill.pk %}">{{ skill.name }}</a></li>
+  {% endfor %}
+</ul>
+<a href="{% url 'skill_create' %}">Create New Skill</a>
+{% endblock %}

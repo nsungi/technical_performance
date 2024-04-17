@@ -1,0 +1,23 @@
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Collaborations{% endblock %}
+
+{% block styles %}
+ 
+{% endblock %}
+
+{% block content %}
+<!-- Content of the home page goes here -->
+<h1>Collaborations</h1>
+<ul>
+    {% for collaboration in collaborations %}
+        <li>
+            <a href="{% url 'view_collaboration' collaboration.id %}">{{ collaboration.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

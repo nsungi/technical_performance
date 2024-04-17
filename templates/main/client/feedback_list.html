@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Feedback List{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center mb-4">Feedback List</h2>
+            <ul class="list-group">
+                {% for feedback in feedbacks %}
+                <li class="list-group-item mb-3">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <strong>Message:</strong> {{ feedback.get_message_display }}<br>
+                            <strong>Description:</strong> {{ feedback.description }}<br>
+                            <strong>Created At:</strong> {{ feedback.created_at }}
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-end align-items-center">
+                            <form action="{% url 'delete_feedback' feedback.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                {% empty %}
+                <li class="list-group-item text-center">No feedback available</li>
+                {% endfor %}
+            </ul>
+            <div class="text-center mt-4">
+                <a href="{% url 'create_feedback' feedbacks.0.appointment_id %}" class="btn btn-primary">Create Feedback</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
