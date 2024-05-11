@@ -1,56 +1,51 @@
-{% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
-     
-</head>
-<body>
-    <div class="container">
-        <h1>User Registration</h1>
+{% extends 'authorize/base.html' %}
+
+{% block title %}User Registration{% endblock %}
+
+{% block content %}
+    <div class="container" style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+        <h1 style="text-align: center;">User Registration</h1>
         
         <!-- Register Form -->
         <div class="register-form">
             <form method="post" action="" id="registerForm">
                 {% csrf_token %}
 
-                <label for="password">Username</label>
-                <input type="text" id="firstName" name="userName" required><br><br>
+                <label for="password" style="display: block; margin-bottom: 5px;">Username</label>
+                <input type="text" id="firstName" name="userName" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
                 
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" required><br><br>
+                <label for="firstName" style="display: block; margin-bottom: 5px;">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
                 
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" required><br><br>
+                <label for="lastName" style="display: block; margin-bottom: 5px;">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
                 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
+                <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
                 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="pass1" required><br><br>
+                <label for="password" style="display: block; margin-bottom: 5px;">Password:</label>
+                <input type="password" id="password" name="pass1" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
                 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="pass2" required><br><br>
+                <label for="password" style="display: block; margin-bottom: 5px;">Confirm Password:</label>
+                <input type="password" id="password" name="pass2" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
                 
-                <label for="role">Role:</label>
-                <select id="role" name="role" required>
+                <label for="role" style="display: block; margin-bottom: 5px;">Role:</label>
+                <select id="role" name="role" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
                     <option value="Technician">Technician</option>
                     <option value="Client">Client</option>
                 </select><br><br>
                 
-                <button type="submit">Register</button>
+                <button type="submit" style="background-color: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Register</button>
             </form>
             
-            <p>Already have an account? <a href="{% url 'signIn' %}">Login</a></p>
+            <p style="margin-top: 20px;">Already have an account? <a href="{% url 'signIn' %}">Login</a></p>
         </div>
     </div>
 
     <div id="messages">
         {% for message in messages %}
-            <div class="message {% if message.tags == 'error' %}error{% elif message.tags == 'success' %}success{% endif %}">
+            <div class="message" style="padding: 10px; margin-bottom: 10px; border-radius: 4px; font-size: 14px; {% if message.tags == 'error' %}background-color: #f44336; color: #fff;{% elif message.tags == 'success' %}background-color: #4caf50; color: #fff;{% endif %}">
                 {{ message }}
             </div>
         {% endfor %}
@@ -64,59 +59,4 @@
             });
         }, 5000);  // Fade out after 5 seconds
     </script>
-</body>
-</html>
-
-
-
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-}
-
-.register-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.register-form input[type="text"],
-.register-form input[type="email"],
-.register-form input[type="password"],
-.register-form select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.register-form button[type="submit"] {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.register-form button[type="submit"]:hover {
-    background-color: #2980b9;
-}
-
-</style>
+{% endblock %}

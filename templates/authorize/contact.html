@@ -1,0 +1,89 @@
+
+{% extends 'authorize/base.html' %}
+
+{% block title %} Technical Performance Feedback System {% endblock  %}     
+
+
+{% block content %}
+
+   <!-- Main Content -->
+   <main class="pt-5 pb-5">
+    <!-- Contact Section -->
+    <section class="contact pt-4" id="contact">
+      <div class="heading text-center pt-3">
+        <small class="pt-5">Get in Touch</small>
+        <h5 style="color: #12a89d;;">Any Questions? Feel Free to Contact</h5>
+      </div>
+      <div>
+        <iframe style="border:0; width: 100%; height: 270px;" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m16!1m3!1d7900358.40000002!2d34.888325!3d-6.369074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217b9b31e3f0b1ff!2sTanzania!4f13.1!framesrc=https://www.google.com/maps/embed?pb=!1m18!1m16!1m3!1d7900358.40000002!2d34.888325!3d-6.369074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217b9b31e3f0b1ff!2sTanzania!4f13.1!framesrc=s1h/" 
+                frameborder="0" allowfullscreen></iframe>
+      </div>
+      
+      <div class="row justify-content-evenly mt-5">
+        <div class="col-md-5 col-10 contact-details" >
+          <div class="row justify-content-evenly">
+            <div class="col-1">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <div class="col-11">
+              <h4>Location</h4>
+              <p class="text-success">Morogoro, Tanzania</p>
+            </div>
+          </div>
+          <div class="row justify-content-evenly">
+            <div class="col-1">
+              <i class="bi bi-telephone-fill"></i>
+            </div>
+            <div class="col-11">
+              <h4>Call:</h4>
+              <p class="text-success">+255  123456789</p>
+            </div>
+          </div>
+          <div class="row justify-content-evenly">
+            <div class="col-1">
+              <i class="bi bi-envelope-fill"></i>
+            </div>
+            <div class="col-11">
+              <h4>Email:</h4>
+              <p class="text-success">info@onlinesupport.com</p>
+            </div>
+          </div>
+          <div class="row justify-content-evenly">
+            <div class="col-1">
+              <i class="bi bi-globe-americas"></i>
+            </div>
+            <div class="col-11">
+              <h4>website:</h4>
+              <p class="text-success">www.online support.co.tz</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 col-10 mt-3 mt-md-0">
+          <div class="contact-form">
+            <form action="https://formsubmit.co/info@onlinesupport.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <div class="mb-3">
+                <input type="text" class="form-control" name="name" placeholder="Name" required>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" name="email" placeholder="E-mail" required>
+              </div>
+              <div class="mb-3">
+                <input type="tel" class="form-control" name="phone" placeholder="Phone No." required>
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" name="message" placeholder="Message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="c-btn h-btn mt-3 py-3 px-5 rounded-pill" style="background-color: #12a89d; color: #000000 ">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section Ends -->
+
+  </main>
+    
+{% endblock  %}

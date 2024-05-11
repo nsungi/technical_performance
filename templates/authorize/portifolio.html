@@ -1,40 +1,67 @@
 {% extends 'authorize/base.html' %}
-{% block title %}Portfolio{% endblock %}
+
+{% load static %}
+
+{% block title %}Portfolio - Integrated Technician Performance Feedback System{% endblock %}
 
 {% block content %}
-  <div class="container">
-    <h2 class="mt-5">Portfolio</h2>
-    <div class="row mt-4">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="image1.jpg" class="card-img-top" alt="Image 1">
-          <div class="card-body">
-            <h5 class="card-title">Project 1</h5>
-            <p class="card-text">Description of project 1.</p>
-            <a href="#" class="btn btn-primary">View Details</a>
-          </div>
+<div class="container-fluid mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card mt-5 shadow">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4 text-success">Integrated Technician Performance Feedback System</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <img src="{% static 'assets1/assets/img/feedback.jpg' %}" alt="Feedback System" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="mb-3">Overview</h3>
+                            <p class="card-text">
+                                The Integrated Technician Performance Feedback System is an innovative platform designed to streamline the process of collecting, analyzing, and acting upon feedback from technicians and clients. It offers advanced features and tools to enhance communication, efficiency, and accountability within your organization.
+                            </p>
+                            <h3 class="mb-3 text-success">Key Features</h3>
+                            <ul class="list-unstyled">
+                                <li>Real-time feedback submission</li>
+                                <li>Performance tracking and analysis</li>
+                                <li>Client satisfaction surveys</li>
+                                <li>Technician evaluation tools</li>
+                                <li>Automated reporting and insights</li>
+                                <li>Integration with existing systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h3 class="mb-3 text-success">Benefits</h3>
+                            <ul class="list-unstyled">
+                                <li>Improved technician performance</li>
+                                <li>Enhanced client satisfaction</li>
+                                <li>Efficient feedback management</li>
+                                <li>Data-driven decision-making</li>
+                                <li>Increased accountability and transparency</li>
+                                <li>Streamlined reporting process</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            
+                            <img src="{% static 'assets1/assets/img/services.jpg' %}" alt="Feedback System Benefits" class="img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <h3 class="mb-3 text-success">Get Started</h3>
+                            <p class="card-text">
+                                Ready to revolutionize your technician performance management? Contact us today to schedule a demo or learn more about how the Integrated Technician Performance Feedback System can benefit your organization.
+                            </p>
+                            <div class="text-center mt-3">
+                                <a href="{% url 'contact' %}" class="btn btn-success btn-lg">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="image2.jpg" class="card-img-top" alt="Image 2">
-          <div class="card-body">
-            <h5 class="card-title">Project 2</h5>
-            <p class="card-text">Description of project 2.</p>
-            <a href="#" class="btn btn-primary">View Details</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="image3.jpg" class="card-img-top" alt="Image 3">
-          <div class="card-body">
-            <h5 class="card-title">Project 3</h5>
-            <p class="card-text">Description of project 3.</p>
-            <a href="#" class="btn btn-primary">View Details</a>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 {% endblock %}

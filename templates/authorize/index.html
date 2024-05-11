@@ -1,55 +1,691 @@
-
 {% extends 'authorize/base.html' %}
-{% block title %}Technical{% endblock %}
+
+{% load static %}
+
+{% block title %}
+    Technical performance feedbacks
+{% endblock  %}
+
 
 {% block content %}
+    
 
 
-<div class="container">
-  <!-- Image and words section -->
-  <div class="image-words-section">
-    <img src="image.jpg" alt="Image" class="img-fluid">
-    <p class="animate__animated animate__fadeIn">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet, velit at interdum dignissim, libero velit varius nisi, a condimentum libero odio non lacus.</p>
-  </div>
 
-  <!-- Service section -->
-  <div class="row">
-    <div class="col-md-4">
-      <div class="service animate__animated animate__fadeIn">
-        <h2>Service 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet, velit at interdum dignissim, libero velit varius nisi, a condimentum libero odio non lacus.</p>
-        <a href="#" class="btn btn-primary">View More</a>
+<section class="home pt-4 pb-4 px-0" id="home">
+    <div class="container">
+      <div class="row justify-content-center align-items-center pt-4">
+        <div class="col-12 col-md-6 col-sm-12 text-center text-md-start pt-4 mb-4" data-aos="slide-right">
+          <h3 class="px-3 pt-5" style="color: #12a89d ">
+            Welcome to Our World of Excellence
+           <span> Unlock the full potential of your team with our Integrated Technical Performance Feedback System.</span>
+          </h3>
+          <p class="text-black">Welcome to a realm where precision meets performance—our Integrated Technical Performance Feedback System.
+             Here, we empower you to discover the pinnacle of your team’s capabilities.</p>
+        </div>
+        <div class="col-12 col-md-6 col-sm-12 text-center pt-5">
+          <img id="bannerImage" src="{% static 'assets1/assets/img/home3.jpg' %}" class="img-fluid" alt="Serengeti Banner" style="max-width: 100%; height: auto; transition: opacity 1s ease-in-out;" />
+        </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="service animate__animated animate__fadeIn">
-        <h2>Service 2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet, velit at interdum dignissim, libero velit varius nisi, a condimentum libero odio non lacus.</p>
-        <a href="#" class="btn btn-primary">View More</a>
+  
+    <script>
+      const bannerImage = document.getElementById('bannerImage');
+      const imageUrls = [
+        "{% static 'assets1/assets/img/home5.jpg' %}",
+        "{% static 'assets1/assets/img/home4.jpg' %}", // Add more image paths here
+        "{% static 'assets1/assets/img/home2.jpg' %}", // ...
+      ];
+      let currentImageIndex = 0;
+  
+      function changeBannerImage() {
+        currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
+        bannerImage.src = imageUrls[currentImageIndex];
+        bannerImage.style.opacity = 0; // Reset opacity for smooth transition
+        setTimeout(() => {
+          bannerImage.style.opacity = 1;
+        }, 100); // Adjust delay for transition duration (in milliseconds)
+      }
+  
+      setInterval(changeBannerImage, 5000); // Change image every 5 seconds (adjust as needed)
+    </script>
+  </section>
+  
+
+  <main id="main">
+ 
+<!-- ======= Services Section ======= -->
+<section id="services" class="services">
+  <div class="container">
+
+    <div class="section-title">
+      <h4 class="text-success text-center"> We do offer awesome <span>Services</span></h4>
+      <p>We offer excellent services that cater to your needs. Our goal is to provide efficient solutions that enhance your experience and fulfill your requirements.</p>
+    </div>
+
+    <div class="row">
+      <!-- Electrical Services -->
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="bx bx-wrench"></i></div>
+          <h4 class="title"><a href="">Electrical Services</a></h4>
+          <p class="description">Professional electrical installations, repairs, and maintenance for residential and commercial properties.</p>
+        </div>
+      </div>
+
+      <!-- Construction Services -->
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="bx bx-brush"></i></div>
+          <h4 class="title"><a href="">Construction Services</a></h4>
+          <p class="description">Complete construction solutions from planning to execution, including renovations and new builds.</p>
+        </div>
+      </div>
+
+      <!-- Plumbing Services -->
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="bx bx-plug"></i></div>
+          <h4 class="title"><a href="">Plumbing Services</a></h4>
+          <p class="description">Expert plumbing services for installation, repair, and maintenance of plumbing systems.</p>
+        </div>
+      </div>
+
+      <!-- Networking Services -->
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="bx bx-network-chart"></i></div>
+          <h4 class="title"><a href="">Networking Services</a></h4>
+          <p class="description">Professional networking solutions including setup, troubleshooting, and optimization.</p>
+        </div>
+      </div>
+
+      <!-- Architecture Services -->
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="bx bx-building-house"></i></div>
+          <h4 class="title"><a href="">Architecture Services</a></h4>
+          <p class="description">Comprehensive architectural design and consultancy services for residential and commercial projects.</p>
+        </div>
+      </div>
+
+      <!-- Interior Design Services -->
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="bx bx-paint"></i></div>
+          <h4 class="title"><a href="">Interior Design</a></h4>
+          <p class="description">Creative interior design solutions tailored to your preferences and lifestyle.</p>
+        </div>
+      </div>
+
+      <!-- Automotive Services -->
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="bx bx-car"></i></div>
+          <h4 class="title"><a href="">Automotive Services</a></h4>
+          <p class="description">Professional automotive repairs, maintenance, and detailing services.</p>
+        </div>
+      </div>
+
+      <!-- Photography Services -->
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="bx bx-camera"></i></div>
+          <h4 class="title"><a href="">Photography Services</a></h4>
+          <p class="description">Capturing memorable moments with expert photography services for events, portraits, and more.</p>
+        </div>
+      </div>
+
+      <!-- Painting Services -->
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"> <i class="fa fa-paint-brush"></i></div>
+          <h4 class="title"><a href="">Painting Services</a></h4>
+          <p class="description">Professional painting services for residential and commercial properties, including interior and exterior painting.</p>
+        </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="service animate__animated animate__fadeIn">
-        <h2>Service 3</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet, velit at interdum dignissim, libero velit varius nisi, a condimentum libero odio non lacus.</p>
-        <a href="#" class="btn btn-primary">View More</a>
+
+  </div>
+</section><!-- End Services Section -->
+
+
+<!-- ======= Features Section ======= -->
+<section id="features" class="features">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-6 col-6">
+        <div class="icon-box">
+          <i class="bx bx-wrench" style="color: #ffbb2c;"></i>
+          <h3><a href="">Electrical Services</a></h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6">
+        <div class="icon-box">
+          <i class="bx bx-hammer" style="color: #5578ff;"></i>
+          <h3><a href="">Construction Services</a></h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6 mt-4 mt-md-0">
+        <div class="icon-box">
+          <i class="bx bx-plug" style="color: #e80368;"></i>
+          <h3><a href="">Plumbing Services</a></h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6 mt-4 mt-lg-0">
+        <div class="icon-box">
+          <i class="bx bx-network-chart" style="color: #e361ff;"></i>
+          <h3><a href="">Networking Services</a></h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6 mt-4">
+        <div class="icon-box">
+          <i class="bx bx-building-house" style="color: #47aeff;"></i>
+          <h3><a href="">Architecture Services</a></h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6 mt-4">
+        <div class="icon-box">
+          <i class="bx bx-paint" style="color: #ffa76e;"></i>
+          <h3><a href="">Interior Design</a></h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6 mt-4">
+        <div class="icon-box">
+          <i class="bx bx-car" style="color: #11dbcf;"></i>
+          <h3><a href="">Automotive Services</a></h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6 mt-4">
+        <div class="icon-box">
+          <i class="bx bx-camera" style="color: #4233ff;"></i>
+          <h3><a href="">Photography Services</a></h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6 mt-4">
+        <div class="icon-box">
+          <i class="bx bx-paint-roller" style="color: #b2904f;"></i>
+          <h3><a href="">Painting Services</a></h3>
+        </div>
+      </div>
+      <!-- New engineering-related services -->
+      <div class="col-lg-3 col-md-4 col-6 mt-4">
+        <div class="icon-box">
+          <i class="bx bx-microscope" style="color: #29cc61;"></i>
+          <h3><a href="">Materials Engineering</a></h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6 mt-4">
+        <div class="icon-box">
+          <i class="bx bx-cog" style="color: #ff5828;"></i>
+          <h3><a href="">Mechanical Engineering</a></h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6 mt-4">
+        <div class="icon-box">
+          <i class="bx bx-flask" style="color: #b20969;"></i>
+          <h3><a href="">Chemical Engineering</a></h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6 mt-4">
+        <div class="icon-box">
+          <i class="bx bx-ruler" style="color: #ff5828;"></i>
+          <h3><a href="">Civil Engineering</a></h3>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- About section -->
-  <div class="about-section animate__animated animate__fadeIn">
-    <h2>About Us</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet, velit at interdum dignissim, libero velit varius nisi, a condimentum libero odio non lacus.</p>
-    <p>Contact us at: example@example.com</p>
   </div>
+</section><!-- End Features Section -->
 
-  <!-- Contact section -->
-  <div class="contact-section animate__animated animate__fadeIn">
-    <h2>Contact Us</h2>
-    <p>If you have any questions or need assistance, feel free to contact us.</p>
-    <p>Email: example@example.com</p>
-    <p>Phone: 123-456-7890</p>
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+  
+        <div class="section-title">
+          <h3 class="text-success">Discover Our Stunning work</h3>
+          <h4>Explore Our <span>Exquisite Creations</span></h4>
+          <p>Indulge in the breathtaking beauty of our portfolio, where every creation is a masterpiece crafted with passion and precision. Immerse yourself in a world of limitless possibilities and let your imagination soar.</p>
+        </div>
+        
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">creativity</li>
+              <li data-filter=".filter-card">techinical</li>
+              <li data-filter=".filter-web">Engineering</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="{% static 'assets1/assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Creativity 1</h4>
+              <p>Creativity</p>
+              <a href="{% static 'assets1/assets/img/portfolio/portfolio-1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Creativity 1"><i class="bx bx-plus"></i></a>
+              <a href="{% static 'assets1/portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="{% static 'assets1/assets/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Engineering 3</h4>
+              <p>Engineering</p>
+              <a href="{% static 'assets1/assets/img/portfolio/portfolio-2.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Engineering 3"><i class="bx bx-plus"></i></a>
+           
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="{% static 'assets1/assets/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Creativity 2</h4>
+              <p>Creativity</p>
+              <a href="{% static 'assets1/assets/img/portfolio/portfolio-3.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Creativity 2"><i class="bx bx-plus"></i></a>
+           
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="{% static 'assets1/assets/img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Techinical 2</h4>
+              <p>Techinical</p>
+              <a href="{% static 'assets1/assets/img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Techinical  2"><i class="bx bx-plus"></i></a>
+           
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="{% static 'assets1/assets/img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Engineering 2</h4>
+              <p>Engineering</p>
+              <a href="{% static 'assets1/assets/img/portfolio/portfolio-5.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Engineering 2"><i class="bx bx-plus"></i></a>
+           
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="{% static 'assets1/assets/img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Creativit 3 </h4>
+              <p>Creativity</p>
+              <a href="{% static 'assets1/assets/img/portfolio/portfolio-6.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Creativit 3"><i class="bx bx-plus"></i></a>
+           
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="{% static 'assets1/assets/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Techinical 1</h4>
+              <p>Techinical</p>
+              <a href="{% static 'assets1/assets/img/portfolio/portfolio-7.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Techinical 1"><i class="bx bx-plus"></i></a>
+           
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="{% static 'assets1/assets/img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Techinical 3</h4>
+              <p>Techinical</p>
+              <a href="{% static 'assets1/assets/img/portfolio/portfolio-8.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Techinical 3"><i class="bx bx-plus"></i></a>
+           
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="{% static 'assets1/assets/img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Engineering 3</h4>
+              <p>Engineering</p>
+              <a href="{% static 'assets1/assets/img/portfolio/portfolio-9.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Engineering 3"><i class="bx bx-plus"></i></a>
+           
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+
+    <!-- ======= F.A.Q Section ======= -->
+<section id="faq" class="faq">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>F.A.Q</h2>
+      <h3>Frequently Asked <span>Questions</span></h3>
+    </div>
+
+    <ul class="faq-list">
+
+      <li>
+        <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">What is an integrated technical performance feedback system and why is it important? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+        <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+          <p>
+            An integrated technical performance feedback system is a comprehensive mechanism for gathering, analyzing, and disseminating feedback on the technical performance of systems or processes within an organization. It allows for real-time monitoring, evaluation, and improvement of technical operations, leading to enhanced efficiency, productivity, and quality assurance.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">What are the key components of an integrated technical performance feedback system? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+        <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+          <p>
+            The key components typically include data collection mechanisms, performance metrics, analytical tools, reporting systems, and feedback loops. These components work together to capture, analyze, and act upon data related to technical performance, facilitating continuous improvement and informed decision-making.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">How does an integrated technical performance feedback system benefit organizations? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+        <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+          <p>
+            The system provides organizations with valuable insights into their technical operations, enabling them to identify strengths, weaknesses, and areas for improvement. By fostering a culture of continuous learning and adaptation, it enhances operational efficiency, reduces downtime, minimizes risks, and ultimately improves overall performance and competitiveness.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">How can organizations implement an integrated technical performance feedback system effectively? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+        <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+          <p>
+            Effective implementation requires clear goals, stakeholder engagement, robust data collection processes, advanced analytics capabilities, and a culture of accountability and transparency. It is essential to tailor the system to the specific needs and context of the organization, continuously monitor its performance, and adapt it as necessary to drive meaningful improvements.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">What are some challenges associated with implementing an integrated technical performance feedback system? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+        <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+          <p>
+            Challenges may include data quality issues, technological limitations, resistance to change, resource constraints, and organizational silos. Overcoming these challenges requires strong leadership, effective communication, capacity-building efforts, and a commitment to continuous improvement and innovation.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">How can organizations measure the effectiveness of their integrated technical performance feedback system? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+        <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+          <p>
+            Organizations can measure effectiveness through key performance indicators (KPIs) such as data accuracy, timeliness of feedback, adoption rates, process improvements, and impact on overall performance metrics. Regular reviews, audits, and feedback loops help evaluate performance, identify areas for enhancement, and drive continuous refinement and optimization of the system.
+          </p>
+        </div>
+      </li>
+
+    </ul>
+
   </div>
-</div>
-{% endblock %}
+</section><!-- End F.A.Q Section -->
+
+    
+    <!-- ======= Team Section ======= -->
+<section id="team" class="team">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Meet Our Engineering Team</h2>
+      <h3>Experts in Various Engineering Fields</h3>
+      <p>Get to know our diverse team of engineers, each specializing in their respective fields and collectively driving innovation and excellence across all our projects.</p>
+    </div>
+
+    <div class="row">
+
+      <!-- Civil Engineer -->
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="member">
+          <div class="member-img">
+            <img src="{% static 'assets1/assets/img/team/team-5.jpg' %}" class="img-fluid" alt="Civil Engineer">
+          </div>
+          <div class="member-info">
+            <span>Civil Engineer</span>
+            <p>Expertise in structural design and project management ensures our infrastructure projects are built to last and meet the highest standards of safety and functionality.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Electrical Engineer -->
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="member">
+          <div class="member-img">
+            <img src="{% static 'assets1/assets/img/team/team-3.jpg' %}" class="img-fluid" alt="Electrical Engineer">
+          </div>
+          <div class="member-info">
+            <span>Electrical Engineer</span>
+            <p>Expertise in electrical systems design and renewable energy solutions drives our commitment to sustainability and energy efficiency in all our projects.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Construction Engineer -->
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="member">
+          <div class="member-img">
+            <img src="{% static 'assets1/assets/img/team/team-2.jpg' %}" class="img-fluid" alt="Construction Engineer">
+          </div>
+          <div class="member-info">
+            <span>Construction Engineer</span>
+            <p>Expertise in construction management and project scheduling ensures our construction projects are completed on time, within budget, and to the highest quality standards.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Network Engineer -->
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="member">
+          <div class="member-img">
+            <img src="{% static 'assets1/assets/img/team/team-4.jpg' %}" class="img-fluid" alt="Network Engineer">
+          </div>
+          <div class="member-info">
+            <span>Network Engineer</span>
+            <p>Expertise in network design and cybersecurity ensures our IT infrastructure is robust, secure, and capable of supporting our digital initiatives.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Automotive & Mechanical Engineer -->
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="member">
+          <div class="member-img">
+            <img src="{% static 'assets1/assets/img/team/team1.jpg' %}" class="img-fluid" alt="Automotive & Mechanical Engineer">
+          </div>
+          <div class="member-info">
+            <span>Automotive & Mechanical Engineer</span>
+            <p>Expertise in automotive engineering and mechanical design ensures our products meet the highest standards of performance, efficiency, and reliability.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Team Section -->
+
+
+
+  <!-- testimonial section starts  -->
+  <section class="testimonial pt-5 pb-3" id="testimonial" style="background-color: #12a89d;">
+    <div class="row justify-content-evenly">
+      <div class="col-md-4 col-10" >
+        <img src="{% static 'assets1/assets/img/tastimonials-img.png' %}" class="img-fluid" alt="" />
+      </div>
+      <div class="col-md-6 col-10 mt-5"  >
+        <div class="heading px-3">
+          <small >Latest</small>
+          <h4 style="color: #12a89d;"> Clients Feedback</h4>
+          <!-- here we will use carousel element from bootstrap -->
+          <div
+            id="carouselExampleControls"
+            class="carousel slide"
+            data-bs-ride="carousel">
+          
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row justify-content-evenly">
+                  <div class="col-2 text-center">
+                    <i class="bi bi-quote"></i>
+                  </div>
+                  <div class="col-10">
+                    <p style="color: #ffffff;">
+                        "Insightful event on Serengeti Smart City  in sustainable tourism. Well-organized and informative.
+                         Looking forward to future events."
+                    </p>
+                    <h4 style="color: white">Charles</h4>
+                    <small class="fs-6 text-black">Visitor</small>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row justify-content-evenly">
+                  <div class="col-2 text-center">
+                    <i class="bi bi-quote"></i>
+                  </div>
+                  <div class="col-10">
+                    <p style="color: #ffffff;">
+                        Impressive professionalism and attention to detail ...
+                        Impressed by your management team's expertise. Valuable insights into conservation efforts and technology's role.
+                    </p>
+                    <h4 style="color: #ffffff;">Zuberi Ibahim</h4>
+                    <small class="fs-6 text-black">Engineer</small>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row justify-content-evenly">
+                  <div class="col-2 text-center">
+                    <i class="bi bi-quote"></i>
+                  </div>
+                  <div class="col-10">
+                    <p style="color: #ffffff;">
+                        "Your team's dedication to sustainable Serengeti Smart City is commendable. Innovative solutions and comprehensive plans."
+                    </p>
+                    <h4 style="color: #ffffff;"> Maria </h4>
+                    <small class="fs-6 text-black">Visitor</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="nextprev-btn rounded-pill prev-btn"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev"
+            >
+              <i class="bi bi-arrow-left-circle-fill prev"></i>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="nextprev-btn rounded-pill next-btn"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="next"
+            >
+              <i class="bi bi-arrow-right-circle-fill next"></i>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- testimonial ends here -->
+  </main><!-- End #main -->
+
+
+    <!-- Main Content -->
+    <main class="pt-5 pb-5">
+      <!-- Contact Section -->
+      <section class="contact pt-4" id="contact">
+        <div class="heading text-center pt-3">
+          <small class="pt-5">Get in Touch</small>
+          <h5 style="color: #12a89d;;">Any Questions? Feel Free to Contact</h5>
+        </div>
+        <div>
+          <iframe style="border:0; width: 100%; height: 270px;" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m16!1m3!1d7900358.40000002!2d34.888325!3d-6.369074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217b9b31e3f0b1ff!2sTanzania!4f13.1!framesrc=https://www.google.com/maps/embed?pb=!1m18!1m16!1m3!1d7900358.40000002!2d34.888325!3d-6.369074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217b9b31e3f0b1ff!2sTanzania!4f13.1!framesrc=s1h/" 
+                  frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <div class="row justify-content-evenly mt-5">
+          <div class="col-md-5 col-10 contact-details" >
+            <div class="row justify-content-evenly">
+              <div class="col-1">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+              <div class="col-11">
+                <h4>Location</h4>
+                <p class="text-success">Morogoro, Tanzania</p>
+              </div>
+            </div>
+            <div class="row justify-content-evenly">
+              <div class="col-1">
+                <i class="bi bi-telephone-fill"></i>
+              </div>
+              <div class="col-11">
+                <h4>Call:</h4>
+                <p class="text-success">+255  123456789</p>
+              </div>
+            </div>
+            <div class="row justify-content-evenly">
+              <div class="col-1">
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+              <div class="col-11">
+                <h4>Email:</h4>
+                <p class="text-success">info@onlinesupport.com</p>
+              </div>
+            </div>
+            <div class="row justify-content-evenly">
+              <div class="col-1">
+                <i class="bi bi-globe-americas"></i>
+              </div>
+              <div class="col-11">
+                <h4>website:</h4>
+                <p class="text-success">www.online support.co.tz</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 col-10 mt-3 mt-md-0">
+            <div class="contact-form">
+              <form action="https://formsubmit.co/info@onlinesupport.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <div class="mb-3">
+                  <input type="text" class="form-control" name="name" placeholder="Name" required>
+                </div>
+                <div class="mb-3">
+                  <input type="email" class="form-control" name="email" placeholder="E-mail" required>
+                </div>
+                <div class="mb-3">
+                  <input type="tel" class="form-control" name="phone" placeholder="Phone No." required>
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control" name="message" placeholder="Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="c-btn h-btn mt-3 py-3 px-5 rounded-pill" style="background-color: #12a89d; color: #000000 ">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Contact Section Ends -->
+  
+    </main>
+
+
+
+{% endblock  %}

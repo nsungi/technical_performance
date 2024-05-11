@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% load widget_tweaks %}
 
@@ -8,43 +9,45 @@
 {% block content %}
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
-        <center>
-          <h2 class="mt-5">Available Services</h2>
-        </center>
-       
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for service in services %}
-              <tr>
-                <td>{{ service.title }}</td>
-                <td>{{ service.description }}</td>
-                <td>${{ service.price }}</td>
-                <td>
-                  <a href="{% url 'update_service' service.id %}" class="btn btn-primary btn-sm">Edit</a>
-                  <a href="{% url 'delete_service' service.id %}" class="btn btn-danger btn-sm">Delete</a>
-                </td>
-              </tr>
-            {% endfor %}
-            <tr>
-              <td colspan="3"></td>
-              <td>
-                <button class="btn btn-primary" id="addServiceBtn">
-                  <i class="fas fa-plus"></i> 
-                  <a href="{% url 'create_service' %}" class="text-dark" >Add New Service</a>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="col-md-10 offset-md-1">
+        <div class="card shadow mt-5">
+          <div class="card-header bg-primary text-white">
+            <h2 class="mb-0 text-center">Available Services</h2>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for service in services %}
+                    <tr>
+                      <td>{{ service.title }}</td>
+                      <td>{{ service.description }}</td>
+                      <td>${{ service.price }}</td>
+                      <td>
+                        <a href="{% url 'update_service' service.id %}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="{% url 'delete_service' service.id %}" class="btn btn-danger btn-sm">Delete</a>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <div class="text-center mt-4">
+              <button class="btn btn-primary" id="addServiceBtn">
+                <i class="fas fa-plus"></i> 
+                <a href="{% url 'create_service' %}" class="text-white">Add New Service</a>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

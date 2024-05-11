@@ -7,28 +7,28 @@
 
 {% block content %}
   <div class="container">
-    <div class="row">
-      <div class="col-sm-6 offset-sm-3">
-        <h2 class="mt-5">Add New Service</h2>
-        <form method="post">
-          {% csrf_token %}
-          <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" class="form-control" id="title" name="title" required>
-          </div>
-          <div class="form-group">
-            <label for="description">Description:</label>
-            <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
-          </div>
-          <div class="form-group">
-            <label for="price">Price:</label>
-            <input type="number" class="form-control" id="price" name="price" step="0.01" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Save</button>
-        </form>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card p-4 shadow">
+          <h2 class="mb-4">Add New Service</h2>
+          <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="title">Title:</label>
+              <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="price">Price:</label>
+              <input type="number" class="form-control" id="price" name="price" step="0.01" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" style="width: 50%;">Save</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 {% endblock %}
-
-

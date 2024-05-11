@@ -1,10 +1,60 @@
+
 {% extends 'authorize/base.html' %}
-{% block title %}About Us{% endblock %}
+
+{% load static %}
+
+{% block title %}About Us - Integrated Technical Support Request{% endblock %}
 
 {% block content %}
-  <div class="container">
-    <h2 class="mt-5">About Us</h2>
-    <p class="mt-4">Brief description about project</p>
-    <p>More details about your team or mission can be included here.</p>
-  </div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 pt-5">
+            <div class="card mb-4 " style="border-radius: 20px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+                <div class="card-body pt-5">
+                    <h2 class="card-title mt-0" style="color: #12a89d; font-size: 24px; font-weight: bold;">Welcome to Integrated Technical Support Request</h2>
+                    <p class="card-text" style="color:black; font-size: 16px;">Your Trusted Partner for Comprehensive Technical Solutions</p>
+                    <p class="card-text" style="color: black; font-size: 16px;">At Integrated Technical Support Request, we're more than just a support service - we're your dedicated partner in navigating the complex world of technology. Our mission is to empower businesses and individuals with the tools and knowledge they need to thrive in today's digital landscape.</p>
+                    <p class="card-text" style="color:black; font-size: 16px;">We understand that every problem is unique, which is why we take a personalized approach to every interaction. From troubleshooting to strategic planning, we're here to guide you every step of the way.</p>
+                    <p class="card-text" style="color: black; font-size: 16px;">Join us on this journey and experience the difference that Integrated Technical Support Request can make in your technological endeavors.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 pt-5">
+            <div class="card mb-4" style="border-radius: 20px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'assets1/assets/img/service1.jpg' %}" class="card-img-top" alt="About Us Image" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Cards with Spacing -->
+    <div class="row mt-4">
+        <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+            <div class="card" style="border-radius: 20px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'assets1/assets/img/service.jpg' %}" class="card-img-top" alt="Service Image" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #12a89d; font-size: 20px; font-weight: bold;">Comprehensive Services</h5>
+                    <p class="card-text" style="color: black; font-size: 16px;">Explore our range of comprehensive technical services designed to meet your business needs.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+            <div class="card" style="border-radius: 20px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'assets1/assets/img/team/team-5.jpg' %}" class="card-img-top" alt="Experts Image" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #12a89d; font-size: 20px; font-weight: bold;">Expert Team</h5>
+                    <p class="card-text" style="color: black; font-size: 16px;">Meet our team of experienced professionals dedicated to providing top-notch technical support.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+            <div class="card" style="border-radius: 20px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'assets1/assets/img/mission.jpg' %}" class="card-img-top" alt="Mission Image" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #12a89d; font-size: 20px; font-weight: bold;">Our Mission</h5>
+                    <p class="card-text" style="color: black; font-size: 16px;">Discover our mission to empower businesses and individuals with the tools and knowledge they need to thrive in today's digital landscape.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

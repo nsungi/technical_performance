@@ -1,6 +1,4 @@
 
-
-
 {% extends 'base.html' %}
 {% load widget_tweaks %}
 
@@ -9,22 +7,35 @@
 {% endblock title %}
 
 {% block content %}
-  <h2>Update Service</h2>
-  <form method="post">
-    {% csrf_token %}
-    <div class="form-group">
-      <label for="title">Title:</label>
-      <input type="text" class="form-control" id="title" name="title" value="{{ service.title }}" required>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card shadow mt-5">
+          <div class="card-header bg-primary text-white">
+            <h2 class="mb-0 text-center">Update Service</h2>
+          </div>
+          <div class="card-body">
+            <form method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{ service.title }}" required>
+              </div>
+              <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" name="description" rows="5" required>{{ service.description }}</textarea>
+              </div>
+              <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" class="form-control" id="price" name="price" value="{{ service.price }}" step="0.01" required>
+              </div>
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="description">Description:</label>
-      <textarea class="form-control" id="description" name="description" rows="5" required>{{ service.description }}</textarea>
-    </div>
-    <div class="form-group">
-      <label for="price">Price:</label>
-      <input type="number" class="form-control" id="price" name="price" value="{{ service.price }}" step="0.01" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Save</button>
-  </form>
+  </div>
 {% endblock content %}
-

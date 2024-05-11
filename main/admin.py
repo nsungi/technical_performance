@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import (User, Profile, Category, Skill, Service, Technician,
                      Appointment, Contract, Feedback, Collaboration, 
-                     ContactInfo, ProjectDocument)
+                    ProjectDocument)
 
 
 
@@ -16,5 +16,4 @@ admin.site.register(Appointment)
 admin.site.register(Contract)
 admin.site.register(Feedback)
 admin.site.register(Collaboration)
-admin.site.register(ContactInfo)
 admin.site.register(ProjectDocument)

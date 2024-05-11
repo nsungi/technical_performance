@@ -3,33 +3,108 @@
 {% block title %}Services{% endblock %}
 
 {% block content %}
-  <div class="container">
-    <h2 class="mt-5">Our Services</h2>
-    <div class="row mt-4">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Service 1</h5>
-            <p class="card-text">Description of service 1.</p>
-          </div>
+
+<section class="services-section py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Available Services</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="service-item text-center p-4 bg-light rounded">
+                    <i class="bi bi-lightning h1 text-primary mb-3"></i>
+                    <h3 class="service-title text-primary">Electrical Services</h3>
+                    <p class="service-description">Comprehensive electrical installation, repair, and troubleshooting services for residential and commercial properties.</p>
+                    <a href="{% url 'create_appointment' %}" class="btn btn-primary btn-block">Book Now</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-item text-center p-4 bg-light rounded">
+                    <i class="bi bi-pipe h1 text-danger mb-3"></i>
+                    <h3 class="service-title text-danger">Plumbing Services</h3>
+                    <p class="service-description">Wide range of plumbing services including installation, repair, maintenance, and emergency fixes.</p>
+                    <a href="{% url 'create_appointment' %}" class="btn btn-danger btn-block">Book Now</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-item text-center p-4 bg-light rounded">
+                    <i class="bi bi-pencil-square h1 text-warning mb-3"></i>
+                    <h3 class="service-title text-warning">Architectural Design</h3>
+                    <p class="service-description">Innovative architectural design solutions for residential and commercial projects, from sketches to detailed plans.</p>
+                    <a href="{% url 'create_appointment' %}" class="btn btn-warning btn-block">Book Now</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-item text-center p-4 bg-light rounded">
+                    <i class="bi bi-tools h1 text-info mb-3"></i>
+                    <h3 class="service-title text-info">Residential Construction</h3>
+                    <p class="service-description">Comprehensive construction services for building custom homes, renovations, and additions with expertise and attention to detail.</p>
+                    <a href="{% url 'create_appointment' %}" class="btn btn-info btn-block">Book Now</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-item text-center p-4 bg-light rounded">
+                    <i class="bi bi-building h1 text-success mb-3"></i>
+                    <h3 class="service-title text-success">Commercial Construction</h3>
+                    <p class="service-description">Expert construction services for office buildings, retail spaces, restaurants, and more, ensuring timely completion and superior craftsmanship.</p>
+                    <a href="{% url 'create_appointment' %}" class="btn btn-success btn-block">Book Now</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-item text-center p-4 bg-light rounded">
+                    <i class="bi bi-thermometer-sun h1 text-danger mb-3"></i>
+                    <h3 class="service-title text-danger">HVAC Services</h3>
+                    <p class="service-description">Installation, repair, and maintenance of HVAC systems to keep indoor environments comfortable and energy-efficient.</p>
+                    <a href="{% url 'create_appointment' %}" class="btn btn-danger btn-block">Book Now</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-item text-center p-4 bg-light rounded">
+                    <i class="bi bi-ruler h1 text-primary mb-3"></i>
+                    <h3 class="service-title text-primary">Structural Analysis and Design</h3>
+                    <p class="service-description">Expert analysis and design solutions for buildings and infrastructure projects, ensuring safety and stability.</p>
+                    <a href="{% url 'create_appointment' %}" class="btn btn-primary btn-block">Book Now</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-item text-center p-4 bg-light rounded">
+                    <i class="bi bi-speedometer h1 text-secondary mb-3"></i>
+                    <h3 class="service-title text-secondary">Road and Highway Design</h3>
+                    <p class="service-description">Specialized road and highway design services for smooth traffic flow, proper drainage, and adherence to regulatory standards.</p>
+                    <a href="{% url 'create_appointment' %}" class="btn btn-secondary btn-block">Book Now</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-item text-center p-4 bg-light rounded">
+                    <i class="bi bi-layout-split h1 text-warning mb-3"></i>
+                    <h3 class="service-title text-warning">Building and Space Planning</h3>
+                    <p class="service-description">Optimize building layout and functionality with space planning services, enhancing productivity and maximizing space usage.</p>
+                    <a href="{% url 'create_appointment' %}" class="btn btn-warning btn-block">Book Now</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-item text-center p-4 bg-light rounded">
+                    <i class="bi bi-cloud-lightning-rain h1 text-info mb-3"></i>
+                    <h3 class="service-title text-info">Stormwater Management</h3>
+                    <p class="service-description">Effective stormwater management solutions to prevent flooding and protect properties with proper water flow and erosion control.</p>
+                    <a href="{% url 'create_appointment' %}" class="btn btn-info btn-block">Book Now</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-item text-center p-4 bg-light rounded">
+                    <i class="bi bi-lightbulb h1 text-primary mb-3"></i>
+                    <h3 class="service-title text-primary">Energy Efficiency Services</h3>
+                    <p class="service-description">Energy efficiency audits and upgrades to save energy, reduce utility costs, and enhance sustainability.</p>
+                    <a href="{% url 'create_appointment' %}" class="btn btn-primary btn-block">Book Now</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-item text-center p-4 bg-light rounded">
+                    <i class="bi bi-clipboard-data h1 text-success mb-3"></i>
+                    <h3 class="service-title text-success">Project Management</h3>
+                    <p class="service-description">Efficient project management services for construction projects, overseeing planning, budgeting, scheduling, and coordination.</p>
+                    <a href="{% url 'create_appointment' %}" class="btn btn-success btn-block">Book Now</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Service 2</h5>
-            <p class="card-text">Description of service 2.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Service 3</h5>
-            <p class="card-text">Description of service 3.</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+</section>
 {% endblock %}

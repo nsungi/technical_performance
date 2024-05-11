@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.http import Http404
 from django.http import HttpResponseForbidden
-from .models import Role, Appointment, Feedback, Collaboration, Profile, Service, Contract, Skill, Technician, ContactInfo, ProjectDocument
+from .models import Role, Appointment, Feedback, Collaboration, Profile, Service, Contract, Skill, Technician, ProjectDocument
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib import messages
@@ -26,36 +26,16 @@ def about(request):
 
 
 
+def technician(request):
+    return render(request, 'authorize/technicians.html')
+
 def portifolio(request):
     return render(request, 'authorize/portifolio.html')
+
 #contact info
 def contact(request):
-    return render(request, 'authorize/contact_form.html')
+    return render(request, 'authorize/contact.html')
 
-
-
-@login_required
-def contact_form(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        message = request.POST.get('message')
-        # Save contact info to the database
-        ContactInfo.objects.create(name=name, email=email, message=message)
-        # Redirect to a success page or back to the contact form
-        return redirect('success')  # Redirect to a success page with the name 'success'
-
-    return render(request, 'authorize/contact_form.html')
-
-@login_required
-def success(request):
-    return render(request, 'authorize/success.html')
-
-@login_required
-def view_messages(request):
-
-    messages = ContactInfo.objects.all()
-    return render(request, 'authorize/view_messages.html', {'messages': messages})
 
 
 def services(request):
@@ -305,13 +285,12 @@ def register_technician(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         password = request.POST.get('password')
-        skill_id = request.POST.get('skills')  # Assuming 'skills' is the select field name
+        skill_id = request.POST.get('skills')   
         location = request.POST.get('location')
         
         # Retrieve the selected skill object
         skill = Skill.objects.get(id=skill_id)
         
-        # Create and save Technician object
         technician = Technician.objects.create(
             name=name,
             email=email,
@@ -319,13 +298,10 @@ def register_technician(request):
             location=location
         )
         
-        # Add skill to the technician
         technician.skills.add(skill)
-        
-        # Redirect to profile upload page
+ 
         return redirect('profile_upload')
-    
-    # Pass list of skills to the template context
+
     skills = Skill.objects.all()
     return render(request, 'authorize/register.html', {'skills': skills})
 
@@ -344,7 +320,6 @@ def profile_upload(request):
         technician.cv = cv
         technician.save()
         
-        # Redirect to technician details page
         return redirect('technician_details', pk=technician.pk)
     
     return render(request, 'authorize/profile_upload.html')
@@ -374,6 +349,8 @@ def collaborate(request):
 def collaboration_list(request):
     collaborations = Collaboration.objects.all()
     return render(request, 'collaboration_list.html', {'collaborations': collaborations})
+
+
 
 @login_required
 def create_collaboration(request): 
@@ -425,9 +402,9 @@ def booking(request):
 @login_required
 def create_appointment(request):
     appointment_id = None  # Initialize appointment_id variable
-    technicians = Technician.objects.all()  # Retrieve all technicians
-    services = Service.objects.all()  # Retrieve all services
-
+    technicians = Technician.objects.all()   
+    services = Service.objects.all()   
+    
     if request.method == 'POST':
         # Retrieve form data
         title = request.POST.get('title')
@@ -522,33 +499,6 @@ def delete_feedback(request, feedback_id):
 
 def dashboard(request):
     return render(request, 'main/client/client-dashboard.html')
-
-
-
-#admin
-
-def dashboardAdmin(request):
-    return render(request, 'main/admin/admin-dashboard.html')
-
-def profileApproved(request):
-    return render(request, 'main/admin/profile-approved.html')
-
-def users(request):
-    return render(request, 'main/admin/users.html')
-
-def categoryRole(request):
-    return render(request, 'main/admin/role-category.html')
-
-
-def userAction(request):
-    return render(request, 'main/admin/action-users.html')
-
-
-def viewUsers(request):
-    return render(request, 'main/admin/view-users.html')
-
-
-
 
 
 #services
@@ -683,7 +633,7 @@ def download_contract(request, pk):
     return response
 
 
-#documentation
+# Project documentation
 def documentation(request):
     document = ProjectDocument.objects.all()
     return render(request, 'main/document.html', {'document': document})

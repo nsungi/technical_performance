@@ -13,6 +13,8 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('portifolio/', views.portifolio, name='portifolio'),
     path('services/', views.services, name='services'),
+    path('technician/', views.technician, name='technician'),
+    
     
     #search
     path('search_technicians/', views.search_technicians, name='search_technicians'),
@@ -20,9 +22,6 @@ urlpatterns = [
     
     #contact info
     path('contact/', views.contact, name='contact'),
-    path('contact_form/', views.contact_form, name='contact_form'),
-    path('success/', views.success, name='success'),
-    path('view-messages/', views.view_messages, name='view_messages'), 
    
     
     path('contract/', views.contract, name='contract'),
@@ -104,15 +103,6 @@ urlpatterns = [
     #path('feedback/<int:booking_id>/', views.feedback, name='feedback'),
     path('feedback_list/', views.feedback_list, name='feedback_list'),
     
-    
-    
-    #admin
-    path('dashboardAdmin/', views.dashboardAdmin, name='dashboardAdmin'),
-    path('profileApproved/', views.profileApproved, name='profileApproved'),
-    path('users/', views.users, name='users'),
-    path('categoryRole/', views.categoryRole, name='categoryRole'),
-    path('userAction/', views.userAction, name='userAction'),
-    path('viewUsers/', views.viewUsers, name='viewUsers'),
    
    #documentntation
    path('documention/', views.documentation, name='documentation'),

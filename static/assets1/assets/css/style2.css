@@ -1,0 +1,255 @@
+
+/* appling google font over the website  */
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+
+     
+}
+
+/* styling home section starts */
+.home{
+    background: #ffffff;
+    padding: 30px 0px 10px 0px;
+}
+.home h2{
+    font-size: 3rem;
+    line-height: 4rem;
+}
+ 
+.home p{
+    width: fit-content;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+ 
+/* adding animation to home section image  */
+.home img{
+    animation: floatimg 4s ease-in-out infinite;
+}
+
+@keyframes floatimg {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-24px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/* expertise section starts */
+.heading small{
+    color: #fcb040;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.heading h3{
+    margin-top: 0.5rem;
+    color: #3f396d;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.expertise h4{
+    color: #3f396d;
+    font-weight: 700;
+}
+.expertise a{
+    text-decoration: none;
+    color: #fca61f;
+}
+.expertise a:hover{
+    color:  #12a89d;
+}
+.expertise .service-card{
+    text-align: center;
+    padding: 15px 15px;
+    border-radius: 0.7rem;
+}
+
+ 
+
+/* portfolio section starts */
+#myBtnContainer{
+    margin-bottom: 45px;
+}
+#myBtnContainer button{
+  border: none;
+  color: black;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;   
+  display: inline-block;
+  margin: 0 25px;
+}
+#myBtnContainer button:hover{
+    color: #fca61f;
+}
+
+#myBtnContainer button:focus{
+    outline: none;
+}
+.post .content h4{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.post .card{
+    border: none;
+}
+
+/* testimonial section starts */
+.testimonial img:hover{
+    transform: scale(1.2,1.2);
+    transition-duration: 1s;
+}
+.testimonial h4{
+    color: #3f396d;
+}
+.testimonial i{
+    font-size: 2.9rem;
+    color: #fca61f;
+    
+}
+.testimonial .nextprev-btn{
+    border: none;
+    background-color: #ffffff;
+}
+.prev:hover,.prev-btn:hover{
+    color: #12a89d;
+    transform: translateX(-10px);
+    transition-duration: 1s;
+}
+.next:hover,.next-btn:hover{
+    color: #12a89d;
+    transform: translateX(10px);
+    transition-duration: 1s;
+}
+
+/* blog section starts */
+.blog{
+    background-color: #ffffff;
+}
+.blog .blogpost .card{
+    border: none;
+    border-radius: 5%;
+}
+.nav-bg{
+    background-color: #ffffff;
+}
+
+.blog .blogpost small{
+    color:  #12a89d;
+    font-size: 1.1rem;
+}
+.blog .blogpost h4,.blogpost a{
+    color: #3f396d;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+.blogpost a:hover{
+    color: #fca61f;
+}
+.blog .blogpost .read-more-btn{
+    text-decoration: none;
+    color: #fca61f;
+    font-size: 1.1rem;
+}
+.blog .blogpost .read-more-btn:hover{
+    color:  #12a89d;
+}
+/* styling modal group  */
+.btn-c{
+    margin-left: 94%;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    margin-top: -3%;
+}
+.btn-c i{
+    color: #fca61f;
+}
+.modal-body .content span{
+    font-size: 1rem;
+}
+.modal-body .content small{
+    font-size: 1rem;
+    color:  #12a89d;
+}
+/* contact section starts */
+.contact{
+    background-color: #ffffff;
+}
+.contact-details i{
+    font-size: 1.5rem;
+    color: #fca61f;
+}
+.contact-details p{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+.contact-form .form-control:focus{
+    box-shadow: none;
+    border: 1px solid #fca61f;
+}
+.contact-form .form-control{
+    padding: 10px 10px;
+    width: 80%;
+}
+
+
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .heading h3 {
+      font-size: 24px; /* Adjust the font size for smaller screens */
+    }
+    .content h4 {
+      font-size: 18px; /* Adjust the font size for smaller screens */
+    }
+    .content p {
+      font-size: 14px; /* Adjust the font size for smaller screens */
+    }
+  }
+
+
+
+  /* Media query for small screens */
+@media (max-width: 768px) {
+    .service-card {
+      margin-bottom: 30px; /* Add space between service cards */
+    }
+  }
+
+
+/* Media query for small screens */
+@media (max-width: 576px) {
+    .service-card {
+      margin-bottom: 15px; /* Reduce space between service cards */
+    }
+    .expertise .container {
+      padding-right: 0; /* Remove padding on the right side */
+      padding-left: 0; /* Remove padding on the left side */
+      overflow-x: auto; /* Allow horizontal scrolling */
+      -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    }
+  }
+  
+
+  /* Adjust testimonial section for mobile screens */
+@media (max-width: 768px) {
+    .testimonial .col-md-4 {
+      display: none; /* Hide the image column on small screens */
+    }
+  
+    .testimonial .col-md-6 {
+      width: 100%; /* Ensure full width for the content column */
+      margin-top: 30px; /* Add some margin for better spacing */
+    }
+  }
+  

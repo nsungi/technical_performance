@@ -1,33 +1,116 @@
+
 {% extends 'base.html' %}
 
 {% load static %}
 
-{% block title %}Create Collaboration{% endblock %}
+{% block title %}
+  Create Collaboration
+{% endblock title %}
 
 {% block content %}
-<!-- Content of the home page goes here -->
-<div class='chat-area' style="margin-bottom: 20px; padding: 20px; background-color: #f7f7f7; border: 1px solid #ddd; border-radius: 10px; max-height: 300px; overflow-y: auto;">
-    {% for item in all_comment %}
-        <div class="messages" style="margin-bottom: 10px; padding: 10px; background-color: #fff; border-radius: 8px;">
-            <p>{{ item.uid.username }}</p>
-            <h5>{{ item.description }}</h5>
-            <span>{{ item.time }}</span>
-        </div>
-    {% endfor %}
-</div>
+<style>
+    /* Container for messages */
+    .message-container {
+        display: flex;
+        flex-direction: column;
+        padding: 20px; /* Added space outside */
+        align-items: center; /* Center content horizontally */
+    }
 
-<div class="container-fluid sticky-bottom" style="margin-top: 20px;">
-    <!-- Content of individual to write comments -->
-    <form action="" method="post" class="chat-form">
-        {% csrf_token %}
-        <div class="form-floating">
-            <textarea class="form-control chat-textarea" name="comment" placeholder="Leave a comment here" required style="height: 100px; resize: none;"></textarea>
-        </div>
-        <div class="modal-footer" style="margin-top: 10px; justify-content: flex-end;">
-            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Send</button>
-        </div>
-    </form>
+    /* Individual message style */
+    .message {
+        max-width: 70%;
+        margin: 10px;
+        padding: 15px;
+        border-radius: 15px;
+        clear: both;
+        word-wrap: break-word; /* Wrap long messages */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    }
+
+    /* Sender's message */
+    .sent {
+        align-self: flex-end;
+        background-color: #DCF8C6; /* Change background color for sent messages */
+    }
+
+    /* Receiver's message */
+    .received {
+        align-self: flex-start;
+        background-color: #F0F0F0; /* Change background color for received messages */
+    }
+
+    /* Form container */
+    .form-container {
+        margin-top: 20px; /* Added space outside */
+        width: 100%; /* Adjusted width to fit within the page */
+        max-width: 600px; /* Maximum width */
+        background-color: #fff; /* White background color */
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+        padding: 20px;
+        margin-bottom: 50px;
+    }
+
+    /* Form styling */
+    .chat-form {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .chat-textarea {
+        flex: 1;
+        resize: none;
+        border: 1px solid #ced4da; /* Added border */
+        border-radius: 10px;
+        padding: 15px;
+        margin-right: 10px;
+        width: calc(100% - 120px); /* Adjusted width to fit within main content area */
+    }
+
+    .send-button {
+        width: 80px;
+        border: none;
+        border-radius: 10px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Smooth transition */
+    }
+
+    .send-button:hover {
+        background-color: #0056b3; /* Darker color on hover */
+    }
+
+    /* Ensure form stays at the bottom */
+    .sticky-bottom {
+        margin-top: 20px; /* Added space outside */
+    }
+
+    /* Add space outside the page */
+    .page-container {
+        padding: 20px;
+    }
+</style>
+
+<div class="container">
+    <div class="message-container">
+        {% for item in all_comment %}
+            <div class="message {% if item.uid == request.user %}sent{% else %}received{% endif %}">
+                <p>{{ item.uid.username }}</p>
+                <h5>{{ item.description }}</h5>
+                <span>{{ item.time }}</span>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="form-container">
+        <form action="" method="post" class="chat-form">
+            {% csrf_token %}
+            <textarea class="form-control chat-textarea" name="comment" placeholder="Write here your text..." required></textarea>
+            <button type="submit" class="btn btn-primary send-button">Send</button>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

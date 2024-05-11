@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4 text-center">Project Documentation</h1>
+    <div class="row">
+        {% for doc in document %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ doc.name }}</h5>
+                    <p class="card-text">Uploaded at: {{ doc.document.uploaded_at|date:"D, d M Y" }}</p>
+                    <div class="text-center">
+                        <a href="{{ doc.document.url }}" class="btn btn-primary btn-sm">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

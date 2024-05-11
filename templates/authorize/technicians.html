@@ -1,0 +1,94 @@
+
+{% extends 'authorize/base.html' %}
+
+{% load static %}
+
+{% block title %}Technical Team{% endblock %}
+
+{% block content %}
+
+<section class="technicians-section py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Meet Our Expert Technical Team</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="technician-item text-center p-4 bg-light rounded">
+                    <img src="{% static 'assets1/assets/img/team/jo5.jpg' %}" class="img-fluid rounded-circle mb-3" alt="Technician 1">
+                    <h3 class="technician-name mb-2">John Doe</h3>
+                    <p class="technician-role mb-3">Electrical Engineer</p>
+                    <p class="technician-description">John is an experienced electrical engineer with expertise in wiring, installations, and troubleshooting. He ensures safety and efficiency in all electrical projects.</p>
+                    <ul class="social-icons list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-primary"><i class="bi bi-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-info"><i class="bi bi-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-danger"><i class="bi bi-instagram"></i></a></li>
+                    </ul>
+                    <a href="{% url 'contact' %}" class="btn btn-success btn-sm mt-3">Contact</a>
+                </div>
+            </div>
+            <!-- Add more technician items -->
+            <div class="col">
+                <div class="technician-item text-center p-4 bg-light rounded">
+                    <img src="{% static 'assets1/assets/img/team/jo2.jpg' %}" class="img-fluid rounded-circle mb-3" alt="Technician 2">
+                    <h3 class="technician-name mb-2">Jane Smith</h3>
+                    <p class="technician-role mb-3">Mechanical Engineer</p>
+                    <p class="technician-description">Jane specializes in mechanical engineering, focusing on designing and optimizing mechanical systems for various applications. She brings innovation and efficiency to every project.</p>
+                    <ul class="social-icons list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-primary"><i class="bi bi-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-info"><i class="bi bi-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-danger"><i class="bi bi-instagram"></i></a></li>
+                    </ul>
+                    <a href="{% url 'contact' %}" class="btn btn-success btn-sm mt-3">Contact</a>
+                </div>
+            </div>
+            <!-- Add more technician items -->
+            <div class="col">
+                <div class="technician-item text-center p-4 bg-light rounded">
+                    <img src="{% static 'assets1/assets/img/team/jo3.jpg' %}" class="img-fluid rounded-circle mb-3" alt="Technician 3">
+                    <h3 class="technician-name mb-2">Michael Johnson</h3>
+                    <p class="technician-role mb-3">Civil Engineer</p>
+                    <p class="technician-description">Michael specializes in civil engineering, providing expertise in structural design and project management for infrastructure projects.</p>
+                    <ul class="social-icons list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-primary"><i class="bi bi-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-info"><i class="bi bi-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-danger"><i class="bi bi-instagram"></i></a></li>
+                    </ul>
+                    <a href="{% url 'contact' %}" class="btn btn-success btn-sm mt-3">Contact</a>
+                </div>
+            </div>
+            <!-- Add more technician items -->
+            <div class="col">
+                <div class="technician-item text-center p-4 bg-light rounded">
+                    <img src="{% static 'assets1/assets/img/team/jo4.jpg' %}" class="img-fluid rounded-circle mb-3" alt="Technician 4">
+                    <h3 class="technician-name mb-2">Emily Williams</h3>
+                    <p class="technician-role mb-3">Software Engineer</p>
+                    <p class="technician-description">Emily is a skilled software engineer with expertise in web development, mobile app development, and system architecture.</p>
+                    <ul class="social-icons list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-primary"><i class="bi bi-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-info"><i class="bi bi-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-danger"><i class="bi bi-instagram"></i></a></li>
+                    </ul>
+                    <a href="{% url 'contact' %}" class="btn btn-success btn-sm mt-3">Contact</a>
+                </div>
+            </div>
+            <!-- Add more technician items -->
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta bg-success text-white py-5 mt-5 mb-5" style="border-radius: 200px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
+                <h2 class="mb-4">Ready to Get Started?</h2>
+                <p class="mb-4">Contact us today to discuss your technical support needs and schedule a consultation.</p>
+                <a href="{% url 'contact' %}" class="btn btn-light btn-lg">Contact Us</a>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <img src="{% static 'assets/images/logo.jpg' %}" alt="Logo" class="img-fluid rounded-circle" style="width: 200px; height: 200px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
